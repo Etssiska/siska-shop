@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  background-color: rgb(147, 30, 147);
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  color: rgb(232, 244, 255);
+  height: 50px;
+  align-items: center;
+}
+
+nav .logo {
+  font-family: "Tapestry", cursive;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: rgb(196, 214, 231);
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Banner */
+
+.banner {
+  height: 280px;
+  background-image: url(img/gambar.jpg);
+  background-size: cover;
+  background-position: 0 -80px;
+  border-bottom: 5px solid rgb(147, 30, 147);
+}
+
+.container {
+  margin: auto;
+}
+
+/* Content */
+
+.content {
+  padding: 40px;
+}
+
+.content p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Footer */
+
+.footer {
+  background-color: rgb(21, 20, 20);
+  margin-top: 100px;
+}
+
+.footer .copy {
+  color: aliceblue;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Responsive Breakpoint */
+
+/* Ukuran Tablet */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* Ukuran Mobile */
+@media (max-width: 568px) {
+  .menu-toggle {
+    display: flex;
+    z-index: 2;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(147, 30, 147);
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all 0.4s;
+  }
+
+  nav ul.slide {
+    transform: translateX(0);
+  }
+}

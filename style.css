@@ -6,6 +6,9 @@
 body {
   font-family: "Montserrat Alternates", sans-serif;
   overflow-x: hidden;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  position: relative;
 }
 
 nav {
@@ -105,8 +108,10 @@ nav ul li a:hover {
   border-bottom: 5px solid rgb(147, 30, 147);
 }
 
-.container {
+main {
+  width: 90vw;
   margin: auto;
+  padding: 30px 20px;
 }
 
 /* Content */
@@ -120,13 +125,70 @@ nav ul li a:hover {
   font-size: 14px;
 }
 
+.content1 {
+  padding: 40px 20px;
+  position: relative;
+}
+
+.content1 ul li {
+  list-style: none;
+}
+.content1 .menu1 {
+  width: 155px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.menu1 .gambar {
+  height: 100px;
+  margin: 20px;
+  background: url("./img/marina.png");
+  background-size: cover;
+  background-position: 3px;
+}
+
+.content1 .menu2 {
+  width: 155px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.menu2 .gambar {
+  height: 100px;
+  margin: 20px;
+  background: url("./img/sun.png");
+  background-size: cover;
+  background-position: 3px;
+}
+
+.content2 {
+  padding: 40px;
+}
+
+.content3 {
+  padding: 40px;
+}
+
+.content4 {
+  padding: 40px;
+}
 /* Footer */
 
 .footer {
   background-color: rgb(21, 20, 20);
-  margin-top: 100px;
+  position: absolute;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
-  -ms-flex-align: end;
   justify-content: center;
 }
 
@@ -134,6 +196,7 @@ nav ul li a:hover {
   color: aliceblue;
   text-align: center;
   font-size: 12px;
+  display: flex;
 }
 
 /* Responsive Breakpoint */
@@ -161,7 +224,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     background-color: rgb(147, 30, 147);
-    z-index: 1;
+    z-index: -1;
     transform: translateX(100%);
     transition: all 0.4s;
   }

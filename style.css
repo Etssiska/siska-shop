@@ -233,6 +233,10 @@ main {
 .content4 {
   padding: 40px;
 }
+.content4 h3 {
+  text-align: center;
+  margin-top: 11rem;
+}
 /* Footer */
 
 .footer {
